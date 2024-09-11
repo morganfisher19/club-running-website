@@ -1,0 +1,262 @@
+/* PAGE SETTINGS */
+body{
+    background: rgb(219, 223, 230);
+    color: rgb(0, 59, 92);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* PAGE SETTINGS (general) */
+
+/* header & footer & subsection settings */
+header, footer, .text-section div{
+    background: rgb(163, 203, 250);
+    padding: 20px;
+}
+
+header, footer{
+    text-align: center;
+}
+/* section settings */
+section{
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/* align title & subtitle */
+section.title-section{
+    flex-direction: column;
+    align-items: center;
+} 
+
+/* Edit page title */
+.page-title {
+    font-size: 60px; 
+    margin-bottom: 10px;
+    text-align: center;
+} 
+
+/* Edit page subtitle */
+.page-subtitle {
+    font-size: 36px;
+    text-align: center;
+} 
+
+
+
+/* HEADER SETTINGS */
+header {
+    background-image: url("images/header-img.png");
+    background-position: 0 bottom; /* Start the background at the bottom left */
+    background-repeat: repeat-x; /* Repeat the background horizontally */
+    background-size: 1500px 200px; /* Adjust this to your desired size */
+    height: 130px;
+    animation: scroll-background 20s linear infinite; /* Apply the animation */
+}
+
+/* header photo animation*/
+@keyframes scroll-background {
+    0% {
+        background-position: 0 bottom;
+    }
+    100% {
+        background-position: 1500px bottom; /* Adjust this value to the width of your image */
+    }
+}
+
+.main-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/*  header nav settings */
+.main-menu li {
+    display: inline-block;
+    background-color: transparent;
+    margin: 0 0px;
+    padding: 20px;
+    border-radius: 2px;
+    font-size: 18px;
+}
+
+/* make logo transparent */
+.main-menu li.logo {
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+}
+
+/* logo settings */
+.logo a {
+    background-image: url("images/logo-transparent.png");
+    background-size: 200px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    display: inline-block;
+    height: 130px;
+    width: 300px;
+    position: relative;
+    text-indent: -999999px;
+    top: -20px;
+    margin-right: -100px;
+}
+
+/* links settings */
+a {
+    text-decoration: none;
+    color: rgb(0, 59, 92);
+}
+
+/* underline links on hover */
+a:hover {
+    text-decoration: underline;
+}
+
+/* links are same color once visited */
+a:visited {
+    color: rgb(0, 59, 92);
+}
+
+
+/* HAMBURGER MENU */
+
+.ham-nav .hamburger-menu {
+    display: block; /* Center the hamburger menu icon horizontally */
+    margin-top: 40px; /* Adjust vertical spacing as needed */
+}
+.hamburger-menu{
+    position: relative;
+    cursor: pointer;
+}
+.hamburger-menu img {
+    height: auto;
+    width: 100px;
+    background-color: transparent;
+    position: absolute;
+    left: 40px;
+    transform: translate(-50%, -50%);
+    transition: .3s ease
+}
+
+.off-screen-menu {
+    display: none; /* Hide the off-screen menu initially */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999; /* Ensure it appears above other content */
+}
+.off-screen-menu.active {
+    display: block; /* Show the off-screen menu when active */
+}
+.off-screen-menu ul {
+    list-style-type: none; /* Remove bullet points */
+    padding-left: 130px;
+    margin-top: 14px;
+}
+
+.off-screen-menu ul li {
+    text-align: left; /* Align text to the left */
+    padding: 2px;
+    font-size: 15px;
+}
+
+
+/* Hamburger menu - responsive adjustments */
+@media (max-width: 950px) {
+    .main-menu {
+        display: none; 
+    }
+    header{
+        height: 150px;
+    }
+    
+}
+
+@media (min-width: 950px) {
+    .ham-nav {
+        display: none; 
+    }
+}
+
+.header-logo {
+    display: none;
+}
+
+/* Show logo only for screens less than 900px wide */
+@media (max-width: 950px) {
+    .header-logo {
+        display: block;
+        height: 100px;
+        width: auto;
+        margin: 0 auto;
+        margin-top: -40px;
+    }
+}
+@media (max-width: 700px) {
+    .header-logo {
+        display: block;
+        height: 100px;
+        width: auto;
+        margin-right: 10px;
+        margin-top: -40px;
+    }
+}
+
+
+/* FOOTER SETTINGS (general) */
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0;
+    padding: 30px;
+    text-align: center;
+}
+
+footer p {
+    margin: 0 0 30px 0; /* Adjust margin as needed */
+}
+
+footer p a {
+    color: rgb(0, 59, 92);
+}
+
+footer nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+footer nav a {
+    display: inline-block;
+    text-decoration: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+    width: 40px;
+}
+
+footer nav img {
+    max-width: 100%;
+}
+
+footer nav a:hover img {
+    opacity: 0.8; /* Add a hover effect if desired */
+}
+
+@media (max-width: 450px) {
+    .header-logo {
+        display: none; 
+    }
+}
