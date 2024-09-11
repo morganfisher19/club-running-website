@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GWU Club Cross Country</title>
+    <link rel="stylesheet" href="../static/styles.css">
+    <link rel="stylesheet" href="../static/dues.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="../static/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../static/images/favicon-16x16.png">
+    <link rel="shortcut icon" href="../static/images/favicon.ico">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="main-menu">
+                <li><a href="index.html"><strong>Home</strong></a></li>
+                <li><a href="eboard.html"><strong>Meet Eboard</strong></a></li>
+                <li><a href="routes.html"><strong>Routes</strong></a></li>
+                <li class="logo"><a href="index.html">GW Club XC logo</a></li>
+                <li><a href="dues.html"><strong>Dues & Donations</strong></a></li>
+                <li><a href="records.html"><strong>Club Records</strong></a></li>
+            </ul>
+        </nav>
+        <nav class="ham-nav">
+            <div class="hamburger-menu">
+                <img src="../static/images/menu-img.png" alt="Menu">
+            </div>
+            <div class="off-screen-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="eboard.html">Meet Eboard</a></li>
+                    <li><a href="routes.html">Routes</a></li>
+                    <li><a href="dues.html">Dues & Donations</a></li>
+                    <li><a href="records.html">Club Records</a></li>
+                </ul>
+            </div>
+        </nav>
+        <img class="header-logo" src="../static/images/logo-transparent.png" alt="Club XC Logo">
+    </header>
+
+    <main>
+        <section class="title-section">
+            <h1 class="page-title">Dues & Donations</h1>
+            <h2 class="page-subtitle">Support Us!</h2>
+        </section>
+        <section class="info-section">
+            <h3>Dues</h3>
+            <p>In order for us to provide all the awesome services that we do, (race reduction costs, transportation, uniforms, team dinners, and weekly runs) we need your support! Members of the team are REQUIRED to pay dues.</p>
+            <h4>Here is how to pay your dues</h4>
+            <ol>
+                <li>Follow this <a href="https://my.gwu.edu/mod/cse/" target="_blank">link</a>.</li>
+                <li>Fill out the appropriate fields.
+                    <ol type="a">
+                        <li>Under “Purpose of Payment” select “Student Organization”. Then select “GW Club Cross Country Team” from the dropdown menu.</li>
+                        <li>Under “Payment Information” select “Dues” from the “Payment Purchase” dropdown menu.</li>
+                    </ol>
+                </li>
+            </ol>
+            <p>Returning members and new members alike pay $25 a semester (you get a free team tee!). If you are racing, dues are $50 a semester, you can either pay all at once or by the semester.</p>
+            <p><strong>What is SUPER IMPORTANT is that you send your confirmation e-mail to <a href="mailto:gwuclubxc@gmail.com">gwuclubxc@gmail.com</a> so that WE KNOW YOU HAVE PAID.</strong></p>
+            <p><em>If you are in chrome and the link isn’t working try an incognito window.</em></p>
+        </section>
+
+        <section class="info-section">
+            <h3>Donations</h3>
+            <p>Any donations are greatly appreciated and would be to pay for races, new uniforms, and travel expenses!</p>
+            <h4>Here is how to make a donation</h4>
+            <ol>
+                <li>Follow this <a href="https://my.gwu.edu/mod/cse/" target="_blank">link</a>.</li>
+                <li>Next, fill out the appropriate fields.
+                    <ol type="a">
+                        <li>Under “Purpose of Payment” select “Student Organization”. Then select “GW Club Cross Country Team” from the dropdown menu.</li>
+                        <li>Under “Payment Information” select “Other” from the Payment Purchase dropdown menu and specify Donation.</li>
+                    </ol>
+                </li>
+            </ol>
+            <p>We appreciate your donation! Thank you!</p>
+        </section>
+    </main>
+    
+
+    <footer>
+        <p>
+            George Washington University · 
+            <a href="mailto:gwuclubcrosscountry@gmail.com">gwuclubcrosscountry@gmail.com</a> </p>
+        <nav>
+            <a href="https://www.instagram.com/gwuclubxc/" class="button insta">
+                <img src="../static/images/insta-footer.png" alt="Instagram">
+            </a>
+            <a href="https://www.strava.com/clubs/328997" class="button strava">
+                <img src="../static/images/strava-footer.png" alt="Strava">
+            </a>
+            <a href="https://calendar.google.com/calendar/u/0/embed?src=i0feo0s7tjsi5evu3usjpk6s28@group.calendar.google.com&ctz=America/New_York" class="button calendar">
+                <img src="../static/images/cal-footer.png" alt="Calendar">
+            </a>
+        </nav>
+    </footer>
+    
+    <script>
+        // Select the hamburger menu and off-screen menu elements
+        const hamMenu = document.querySelector(".hamburger-menu");
+        const offScreenMenu = document.querySelector(".off-screen-menu");
+
+        // Add click event listener to the hamburger menu icon
+        hamMenu.addEventListener("click", () => {
+            // Toggle the 'active' class on the off-screen menu
+            offScreenMenu.classList.toggle("active");
+        });
+
+        // Close the off-screen menu when clicking outside of it
+        document.addEventListener("click", (event) => {
+            if (!event.target.closest(".ham-nav")) {
+                hamMenu.classList.remove("active");
+                offScreenMenu.classList.remove("active");
+            }
+        });
+    </script>
+
+</body>
+</html>
