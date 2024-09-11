@@ -1,0 +1,158 @@
+
+.title-section {
+    margin-bottom: 40px;
+}
+
+.routes-section {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+    grid-auto-rows: 1fr;
+    padding: 20px;
+    box-sizing: border-box;
+    row-gap: 120px;
+    margin-bottom: 100px;
+}
+
+.routes-section div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0px;
+    border-radius: 8px;
+    height: 100%;    
+}
+
+.routes-section img {
+    max-width: 100%;
+    height: auto;
+    flex-shrink: 0;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 2px solid white;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+
+}
+
+.routes-section a {
+    display: block;
+    margin: 30px 0 10px;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    padding-top: 20px;
+    text-align: center;
+    margin-top: auto;
+}
+
+.routes-section a:hover {
+    text-decoration: underline;
+}
+
+.routes-section p {
+    margin: 0;
+    font-size: 16px;
+}
+
+
+.routes-section .non-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0px;
+    border-radius: 8px;
+    height: 100%;
+}
+
+/* MAKING IMAGE FLIP */
+
+/* format of cards */
+.card {
+    perspective: 1000px;
+    width: 100%;
+    height: 100%;  
+    border-radius: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: transform 2s ease;
+    transform-style: preserve-3d;
+}
+
+/* rotation of cards */
+.card-front {
+    z-index: 2;
+    transform: rotateY(0deg);
+}
+.card-back {
+    transform: rotateY(180deg);
+}
+.card:hover .card-front {
+    transform: rotateY(-180deg);
+}
+.card:hover .card-back {
+    transform: rotateY(0deg);
+}
+
+/* format of images on front of card */
+.card img {
+    object-fit: cover;
+}
+
+
+
+/* ADJUSTING SIZING FOR MOBILE */
+
+@media (max-width: 584px) {
+    .title-section {
+        margin-bottom: 20px;
+    }
+    .page-title {
+        font-size: 45px;
+    }
+
+    .routes-section {
+        row-gap: 50px;
+    }
+
+    .routes-section img {
+        max-width: 100%;
+        height: auto;
+        flex-shrink: 0;
+        padding: 5px;
+        margin-bottom: 10px;
+    }
+
+    .routes-section a {
+        margin: 0px 0 10px;
+        padding-top: 0px;
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+        margin-top: auto;
+    }
+
+    .card-front, .card-back {
+        width: 80%;
+        height: 80%;
+        text-align: center;
+        align-items: center;
+    }
+    .non-card img{
+        position: relative;
+        width: 80%;
+
+    }
+
+
+}

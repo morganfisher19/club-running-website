@@ -1,0 +1,153 @@
+
+/* TITLE SECTION */
+
+/* Eboard pic settings */
+.title-section img {
+    max-width: 65%; /* Ensure the image does not exceed the width of its container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Make the image a block element to center it horizontally */
+    margin: 0 auto; /* Center the image horizontally */
+    border: 1px solid white;
+    box-shadow: gray 0 0 10px;
+}
+
+
+/* MEET EBOARD SECTION */
+
+/* eboard section layout*/
+.meet-eboard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* sizing of text*/
+.meet-eboard h3 {
+    font-size: 48px;
+}
+.meet-eboard a {
+    font-size: 24px;
+}
+
+/*alignement of text*/
+.eboard-role, .left-side, .right-side {
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+/* MAKING IMAGE FLIP */
+
+/* format of cards */
+.card {
+    perspective: 1000px;
+    width: 450px;
+    height: 450px;
+    
+}
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: transform 2s ease;
+    transform-style: preserve-3d;
+    border-radius: 50%;
+}
+
+/* rotation of cards */
+.card-front {
+    z-index: 2;
+    transform: rotateY(0deg);
+}
+.card-back {
+    transform: rotateY(180deg);
+}
+.card:hover .card-front {
+    transform: rotateY(-180deg);
+}
+.card:hover .card-back {
+    transform: rotateY(0deg);
+}
+
+/* format of images on front of card */
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid white;
+    box-shadow: gray 0 0 10px;
+}
+
+/* format of paragraph on front of card */
+.card p {
+    background-color: #fff;
+    box-sizing: border-box;
+    backface-visibility: hidden;
+    border-radius: 50%;
+    text-align: center;
+    overflow: hidden;
+    word-wrap: break-word;
+    width: 100%;
+    height: 100%;
+    padding: 90px;
+}
+
+
+
+/* ADJUSTING SIZING FOR MOBILE */
+
+/*layout for smaller screens */
+@media (max-width: 850px) {
+    .title-section img {
+        max-width: 90%;
+    }
+    div.right-side.eboard-role {
+        display: none;
+    }
+    .eboard-role {
+        margin-bottom: 20px;
+        }
+
+    .meet-eboard {
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+/* hiding elements for larger screens */
+@media (min-width: 850px) {
+    .hidden-words {
+        display: none;
+    }
+}
+
+/* adjusting for movile device */
+@media (max-width: 600px) {
+    .title-section img {
+        max-width: 100%;
+    }
+    .page-title {
+        font-size: 45px;
+    }
+    .meet-eboard h3 {
+        font-size: 30px;
+        margin: 15px;
+    }
+    .meet-eboard a {
+        font-size: 20px;
+    }
+    .card {
+        width: 300px;
+        height: 300px;
+        margin-bottom: 30px;
+    }
+    .card p {
+        padding: 50px;
+        padding-top: 60px;
+        font-size: 12px;
+    }
+}
